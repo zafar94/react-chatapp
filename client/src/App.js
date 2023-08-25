@@ -1,7 +1,11 @@
+import { Routes, Route } from 'react-router-dom'
+import LobbyScreen from './screens/Lobby';
 function App() {
   return (
     <div className="App">
-      vkebkj
+      <Routes>
+        <Route path='/' element={<LobbyScreen />} />
+      </Routes>
     </div>
   );
 }
