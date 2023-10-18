@@ -37,7 +37,7 @@ const RoomPage = () => {
                 remoteSocketId && <button onClick={handleCallUser}>Call</button>
             }
             {
-                myStream && <ReactPlayer url={myStream} />
+                myStream && <ReactPlayer playing muted height="100px" width="200px" url={myStream} />
             }
         </div>
     )
