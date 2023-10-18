@@ -24,8 +24,12 @@ const RoomPage = () => {
         setMyStream(stream)
     }, [remoteSocketId, socket])
 
+    const handleIncomingCall = useCallback(() => {
+
+    }, [])
     useEffect(() => {
         socket.on('user:joined', handleUserJoined)
+        socket.on('incoming:call', handleIncomingCall)
 
         return () => (
             socket.off("user:joined", handleUserJoined)
