@@ -55,6 +55,7 @@ const RoomPage = () => {
         socket.on('incoming:call', handleIncomingCall)
         socket.on('call:accepted', handleCallAccepted)
         socket.on('peer:nego:needed', handleNegoNeededIncoming)
+        socket.on('peer:nego:final', handleNegoFinalIncoming)
 
         return () => {
             socket.off("user:joined", handleUserJoined)
