@@ -1,12 +1,14 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useSocket } from "../context/SocketProvider";
 
 
 const RoomPage = () => {
     const socket = useSocket();
+    const [remoteSocketId, setRemoteSocketId] = useState(null)
 
     const handleUserJoined = useCallback((email, id) => {
         console.log(`Email ${email}, user joined room`)
+        setRemoteSocketId(id)
     })
 
     useEffect(() => {
