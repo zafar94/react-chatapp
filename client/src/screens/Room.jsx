@@ -47,6 +47,7 @@ const RoomPage = () => {
 
     const handleNegoNeededIncoming = useCallback(({ from, offer }) => {
         const ans = peer.getAnswer(offer);
+        socket.emit('peer:nego:done', { to: from, ans })
     }, [])
 
     useEffect(() => {
