@@ -44,10 +44,16 @@ const RoomPage = () => {
         }
     }, [myStream])
 
+
+    const handleNegoNeededIncoming = useCallback(() => {
+
+    }, [])
+
     useEffect(() => {
         socket.on('user:joined', handleUserJoined)
         socket.on('incoming:call', handleIncomingCall)
         socket.on('call:accepted', handleCallAccepted)
+        socket.on('peer:nego:needed', handleNegoNeededIncoming)
 
         return () => {
             socket.off("user:joined", handleUserJoined)
