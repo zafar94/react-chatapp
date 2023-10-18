@@ -94,6 +94,9 @@ const RoomPage = () => {
         <div>
             <h1>Room Page</h1>
             <h4>{remoteSocketId ? 'Connected' : 'No in room'}</h4>
+
+            {myStream && <button>Send Stream</button>}
+
             {
                 remoteSocketId && <button onClick={handleCallUser}>Call</button>
             }
