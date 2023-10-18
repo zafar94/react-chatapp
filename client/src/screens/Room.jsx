@@ -69,7 +69,7 @@ const RoomPage = () => {
             socket.off('peer:nego:final', handleNegoFinalIncoming)
 
         }
-    }, [socket, handleUserJoined, handleIncomingCall, handleCallAccepted])
+    }, [socket, handleUserJoined, handleIncomingCall, handleCallAccepted, handleNegoNeededIncoming, handleNegoFinalIncoming])
 
     useEffect(() => {
         peer.peer.addEventListener('track', async ev => {
