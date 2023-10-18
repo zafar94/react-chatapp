@@ -50,6 +50,10 @@ const RoomPage = () => {
         socket.emit('peer:nego:done', { to: from, ans })
     }, [socket])
 
+    const handleNegoFinalIncoming = useCallback(({ ans }) => {
+
+    }, [])
+
     useEffect(() => {
         socket.on('user:joined', handleUserJoined)
         socket.on('incoming:call', handleIncomingCall)
