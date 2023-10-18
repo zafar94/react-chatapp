@@ -6,7 +6,7 @@ const RoomPage = () => {
     const socket = useSocket();
 
     const hanldeUserJoined = useCallback((email, id) => {
-        console.log(`Email ${email}, user joined`)
+        console.log(`Email ${email}, user joined room`)
     })
 
     useEffect(() => {
