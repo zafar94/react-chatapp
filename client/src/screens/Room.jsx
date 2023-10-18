@@ -5,14 +5,18 @@ import { useSocket } from "../context/SocketProvider";
 const RoomPage = () => {
     const socket = useSocket();
     const [remoteSocketId, setRemoteSocketId] = useState(null)
+    const [myStream, setMyStream] = useState()
 
     const handleUserJoined = useCallback(({ email, id }) => {
         console.log(`Email ${email}, user joined room`)
         setRemoteSocketId(id)
     })
 
-    const handleCallUser = useCallback(() => {
-
+    const handleCallUser = useCallback(async () => {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            audio: true,
+            video: true
+        })
     }, [])
 
     useEffect(() => {
