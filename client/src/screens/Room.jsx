@@ -71,6 +71,9 @@ const RoomPage = () => {
 
     useEffect(() => {
         peer.peer.addEventListener('negotiationneeded', hanldeNegotiationNeeded)
+        return () => {
+            peer.peer.removeEventListener('negotiationneeded', hanldeNegotiationNeeded)
+        }
     }, [])
 
     return (
