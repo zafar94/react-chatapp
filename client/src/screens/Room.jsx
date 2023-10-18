@@ -74,7 +74,7 @@ const RoomPage = () => {
         return () => {
             peer.peer.removeEventListener('negotiationneeded', hanldeNegotiationNeeded)
         }
-    }, [])
+    }, [hanldeNegotiationNeeded])
 
     return (
         <div>
