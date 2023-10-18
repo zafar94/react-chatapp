@@ -19,6 +19,7 @@ const RoomPage = () => {
             audio: true,
             video: true
         })
+        const offer = await peer.getOffer();
         setMyStream(stream)
     }, [])
 
