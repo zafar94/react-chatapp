@@ -51,7 +51,7 @@ const RoomPage = () => {
             socket.off('call:accepted', handleCallAccepted)
 
         }
-    }, [socket, handleUserJoined, handleIncomingCall])
+    }, [socket, handleUserJoined, handleIncomingCall, handleCallAccepted])
 
     return (
         <div>
