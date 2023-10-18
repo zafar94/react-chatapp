@@ -5,16 +5,17 @@ import { useSocket } from "../context/SocketProvider";
 const RoomPage = () => {
     const socket = useSocket();
 
-    const hanldeUserJoined = useCallback((email, id) => {
+    const handleUserJoined = useCallback((email, id) => {
         console.log(`Email ${email}, user joined room`)
     })
 
     useEffect(() => {
-        socket.on('user:joined', hanldeUserJoined)
-        return (
-            socket.off('user:joined', hanldeUserJoined)
+        socket.on('user:joined', handleUserJoined)
+
+        return () => (
+            socket.off("user:joined", handleUserJoined)
         )
-    }, [socket, hanldeUserJoined])
+    }, [socket, handleUserJoined])
 
     return (
         <div>
