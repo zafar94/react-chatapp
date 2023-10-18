@@ -23,6 +23,9 @@ const RoomPage = () => {
         <div>
             <h1>Room Page</h1>
             <h4>{remoteSocketId ? 'Connected' : 'No in room'}</h4>
+            {
+                remoteSocketId && <button>Call</button>
+            }
         </div>
     )
 }
