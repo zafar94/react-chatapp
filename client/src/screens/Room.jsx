@@ -45,7 +45,6 @@ const RoomPage = () => {
     const handleCallAccepted = useCallback(async ({ from, ans }) => {
         peer.setLocalDescription(ans)
         console.log('CALL ACCEPTED!')
-        sendStream()
     }, [myStream])
 
 
