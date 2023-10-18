@@ -30,6 +30,7 @@ const RoomPage = () => {
             video: true
         })
         const ans = await peer.getAnswer(offer);
+        socket.emit('call:accepted', { to: from, ans })
     }, [])
 
     useEffect(() => {
