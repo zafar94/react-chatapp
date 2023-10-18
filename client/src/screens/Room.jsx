@@ -35,9 +35,15 @@ const RoomPage = () => {
         socket.emit('call:accepted', { to: from, ans })
     }, [socket])
 
+    const handleCallAccepted = useCallback(async ({ from, ans }) => {
+
+    }, [])
+
+
     useEffect(() => {
         socket.on('user:joined', handleUserJoined)
         socket.on('incoming:call', handleIncomingCall)
+        socket.on('call:accepted', handleCallAccepted)
 
         return () => {
             socket.off("user:joined", handleUserJoined)
