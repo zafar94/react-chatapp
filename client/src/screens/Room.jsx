@@ -22,6 +22,7 @@ const RoomPage = () => {
     return (
         <div>
             <h1>Room Page</h1>
+            <h4>{remoteSocketId ? 'Connected' : 'No in room'}</h4>
         </div>
     )
 }
