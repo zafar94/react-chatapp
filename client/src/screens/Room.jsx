@@ -29,6 +29,7 @@ const RoomPage = () => {
             audio: true,
             video: true
         })
+        setMyStream(stream)
         const ans = await peer.getAnswer(offer);
         socket.emit('call:accepted', { to: from, ans })
     }, [])
