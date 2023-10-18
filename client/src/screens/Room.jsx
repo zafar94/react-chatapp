@@ -40,7 +40,7 @@ const RoomPage = () => {
         for (const track of myStream.getTracks()) {
             peer.peer.addTrack(track, myStream)
         }
-    })
+    }, [myStream])
 
     const handleCallAccepted = useCallback(async ({ from, ans }) => {
         peer.setLocalDescription(ans)
