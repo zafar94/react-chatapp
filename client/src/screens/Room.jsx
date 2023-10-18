@@ -25,6 +25,7 @@ const RoomPage = () => {
     }, [remoteSocketId, socket])
 
     const handleIncomingCall = useCallback(async ({ from, offer }) => {
+        setRemoteSocketId(from);
         const stream = await navigator.mediaDevices.getUserMedia({
             audio: true,
             video: true
