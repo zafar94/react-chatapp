@@ -17,6 +17,7 @@ const RoomPage = () => {
             audio: true,
             video: true
         })
+        setMyStream(stream)
     }, [])
 
     useEffect(() => {
