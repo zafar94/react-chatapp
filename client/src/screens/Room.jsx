@@ -49,8 +49,8 @@ const RoomPage = () => {
     }, [sendStream])
 
 
-    const handleNegoNeededIncoming = useCallback(({ from, offer }) => {
-        const ans = peer.getAnswer(offer);
+    const handleNegoNeededIncoming = useCallback(async ({ from, offer }) => {
+        const ans = await peer.getAnswer(offer);
         socket.emit('peer:nego:done', { to: from, ans })
     }, [socket])
 
@@ -78,6 +78,7 @@ const RoomPage = () => {
     useEffect(() => {
         peer.peer.addEventListener('track', async ev => {
             const remoteStream = ev.streams;
+            console.log('GOT TRACKS')
             setRemoteStream(remoteStream);
         })
     }, [])
