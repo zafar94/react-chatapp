@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useSocket } from "../context/SocketProvider";
+import ReactPlayer from 'react-player'
 
 
 const RoomPage = () => {
@@ -34,6 +35,9 @@ const RoomPage = () => {
             <h4>{remoteSocketId ? 'Connected' : 'No in room'}</h4>
             {
                 remoteSocketId && <button onClick={handleCallUser}>Call</button>
+            }
+            {
+                myStream && <ReactPlayer url={myStream} />
             }
         </div>
     )
