@@ -20,8 +20,9 @@ const RoomPage = () => {
             video: true
         })
         const offer = await peer.getOffer();
+        socket.emit("user:call", { to: remoteSocketId, offer })
         setMyStream(stream)
-    }, [])
+    }, [remoteSocketId, socket])
 
     useEffect(() => {
         socket.on('user:joined', handleUserJoined)
