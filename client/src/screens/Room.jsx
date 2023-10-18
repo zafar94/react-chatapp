@@ -67,7 +67,7 @@ const RoomPage = () => {
     const hanldeNegotiationNeeded = useCallback(async () => {
         const offer = await peer.getOffer();
         socket.emit('peer:nego:needed', { offer, to: remoteSocketId })
-    }, [])
+    }, [remoteSocketId, socket])
 
     useEffect(() => {
         peer.peer.addEventListener('negotiationneeded', hanldeNegotiationNeeded)
