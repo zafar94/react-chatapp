@@ -38,7 +38,10 @@ const RoomPage = () => {
     const handleCallAccepted = useCallback(async ({ from, ans }) => {
         peer.setLocalDescription(ans)
         console.log('CALL ACCEPTED!')
-    }, [])
+        for (const track of myStream.getTracks()) {
+            peer.peer.addTrack(track, myStream)
+        }
+    }, [myStream])
 
 
     useEffect(() => {
