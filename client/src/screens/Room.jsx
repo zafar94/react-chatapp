@@ -26,6 +26,7 @@ const RoomPage = () => {
 
     const handleIncomingCall = useCallback(({ from, offer }) => {
         console.log(`InCOMING CALL`, from, offer)
+        const ans = peer.getAnswer(offer);
     }, [])
 
     useEffect(() => {
