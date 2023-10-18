@@ -64,6 +64,13 @@ const RoomPage = () => {
         })
     }, [])
 
+    useEffect(() => {
+        peer.peer.addEventListener('negotiationneeded', async () => {
+            const offer = await peer.getOffer();
+            socket.emit('peer:nego:needed', { offer, to: remoteSocketId })
+        })
+    }, [])
+
     return (
         <div>
             <h1>Room Page</h1>
