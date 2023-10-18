@@ -25,7 +25,7 @@ const RoomPage = () => {
     }, [remoteSocketId, socket])
 
     const handleIncomingCall = useCallback(({ from, offer }) => {
-        console.log(`'InCOMING CALL' ${from}, from ${offer}`)
+        console.log(`InCOMING CALL`, from, offer)
     }, [])
 
     useEffect(() => {
