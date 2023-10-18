@@ -65,6 +65,8 @@ const RoomPage = () => {
             socket.off("user:joined", handleUserJoined)
             socket.off("incoming:call", handleIncomingCall)
             socket.off('call:accepted', handleCallAccepted)
+            socket.off('peer:nego:needed', handleNegoNeededIncoming)
+            socket.off('peer:nego:final', handleNegoFinalIncoming)
 
         }
     }, [socket, handleUserJoined, handleIncomingCall, handleCallAccepted])
