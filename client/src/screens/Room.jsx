@@ -32,7 +32,7 @@ const RoomPage = () => {
         setMyStream(stream)
         const ans = await peer.getAnswer(offer);
         socket.emit('call:accepted', { to: from, ans })
-    }, [])
+    }, [socket])
 
     useEffect(() => {
         socket.on('user:joined', handleUserJoined)
