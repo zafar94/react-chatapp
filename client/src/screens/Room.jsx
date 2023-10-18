@@ -36,11 +36,11 @@ const RoomPage = () => {
         socket.emit('call:accepted', { to: from, ans })
     }, [socket])
 
-    const sendStream = () => {
+    const sendStream = useCallback(() => {
         for (const track of myStream.getTracks()) {
             peer.peer.addTrack(track, myStream)
         }
-    }
+    })
 
     const handleCallAccepted = useCallback(async ({ from, ans }) => {
         peer.setLocalDescription(ans)
