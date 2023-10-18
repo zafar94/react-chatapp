@@ -46,7 +46,7 @@ const RoomPage = () => {
         peer.setLocalDescription(ans)
         console.log('CALL ACCEPTED!')
         sendStream();
-    }, [])
+    }, [sendStream])
 
 
     const handleNegoNeededIncoming = useCallback(({ from, offer }) => {
