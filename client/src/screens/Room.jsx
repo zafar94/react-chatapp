@@ -50,8 +50,8 @@ const RoomPage = () => {
         socket.emit('peer:nego:done', { to: from, ans })
     }, [socket])
 
-    const handleNegoFinalIncoming = useCallback(({ ans }) => {
-
+    const handleNegoFinalIncoming = useCallback(async ({ ans }) => {
+        await peer.setLocalDescription(ans)
     }, [])
 
     useEffect(() => {
