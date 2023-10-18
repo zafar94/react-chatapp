@@ -24,9 +24,12 @@ const RoomPage = () => {
         setMyStream(stream)
     }, [remoteSocketId, socket])
 
-    const handleIncomingCall = useCallback(({ from, offer }) => {
-        console.log(`InCOMING CALL`, from, offer)
-        const ans = peer.getAnswer(offer);
+    const handleIncomingCall = useCallback(async ({ from, offer }) => {
+        const stream = await navigator.mediaDevices.getUserMedia({
+            audio: true,
+            video: true
+        })
+        const ans = await peer.getAnswer(offer);
     }, [])
 
     useEffect(() => {
