@@ -11,6 +11,10 @@ const RoomPage = () => {
         setRemoteSocketId(id)
     })
 
+    const handleCallUser = useCallback(() => {
+
+    }, [])
+
     useEffect(() => {
         socket.on('user:joined', handleUserJoined)
 
@@ -24,7 +28,7 @@ const RoomPage = () => {
             <h1>Room Page</h1>
             <h4>{remoteSocketId ? 'Connected' : 'No in room'}</h4>
             {
-                remoteSocketId && <button>Call</button>
+                remoteSocketId && <button onClick={handleCallUser}>Call</button>
             }
         </div>
     )
