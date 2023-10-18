@@ -43,7 +43,6 @@ const RoomPage = () => {
         }
     }, [myStream])
 
-
     useEffect(() => {
         socket.on('user:joined', handleUserJoined)
         socket.on('incoming:call', handleIncomingCall)
@@ -56,6 +55,12 @@ const RoomPage = () => {
 
         }
     }, [socket, handleUserJoined, handleIncomingCall, handleCallAccepted])
+
+    useEffect(() => {
+        peer.peer.addEventListener('track', async ev => {
+            const remoteStream = ev.streams;
+        })
+    }, [])
 
     return (
         <div>
