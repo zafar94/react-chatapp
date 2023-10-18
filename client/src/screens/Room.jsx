@@ -6,7 +6,7 @@ const RoomPage = () => {
     const socket = useSocket();
     const [remoteSocketId, setRemoteSocketId] = useState(null)
 
-    const handleUserJoined = useCallback((email, id) => {
+    const handleUserJoined = useCallback(({ email, id }) => {
         console.log(`Email ${email}, user joined room`)
         setRemoteSocketId(id)
     })
