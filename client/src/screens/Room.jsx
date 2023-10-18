@@ -70,9 +70,7 @@ const RoomPage = () => {
     }, [])
 
     useEffect(() => {
-        peer.peer.addEventListener('negotiationneeded', async () => {
-
-        })
+        peer.peer.addEventListener('negotiationneeded', hanldeNegotiationNeeded)
     }, [])
 
     return (
