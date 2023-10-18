@@ -45,7 +45,7 @@ const RoomPage = () => {
     }, [myStream])
 
 
-    const handleNegoNeededIncoming = useCallback(() => {
+    const handleNegoNeededIncoming = useCallback(({ from, offer }) => {
 
     }, [])
 
